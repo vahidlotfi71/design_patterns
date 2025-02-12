@@ -31,8 +31,39 @@ func main() {
 	f.Range1()
 	num := 12
 	f.Pointer1(&num)
-	f.New_struct("vahid",32)
+	f.New_struct("vahid", 32)
+
+	ract1 := f.Rect{Hight: 12, Wight: 20}
+	ract1.Area()
+	ract1.Prime()
+
+	ract1.SetParameters(11, 22)
+	fmt.Println(ract1)
 
 
+	fmt.Println()
+	
 
+
+	
+}
+
+type ServerState int
+
+const (
+	StateIdle ServerState = iota
+	StateConnected 
+	StateError 
+	StateRetrying
+)
+
+var statName  = map[ServerState]string{
+	StateIdle: "state",
+	StateConnected : "connected",
+	StateError : "error",
+	StateRetrying : "retrying",
+	}
+
+func (ss ServerState)String() string {
+	return statName[ss]
 }

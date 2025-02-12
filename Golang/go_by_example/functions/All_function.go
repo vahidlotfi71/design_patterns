@@ -185,3 +185,23 @@ func New_struct(name string, age int) {
 		return person1
 	}()
 }
+
+type Rect struct {
+	Hight int
+	Wight int
+}
+
+func (r *Rect) Area() {
+	area := r.Hight * r.Wight
+	fmt.Println("rectangle area: ", area)
+}
+
+func (r Rect) Prime() {
+	prime := r.Hight*2 + r.Wight*2
+	fmt.Println("Prime: ", prime)
+}
+
+func (r *Rect) SetParameters(hight, wight int) {
+	r.Hight = hight
+	r.Wight = wight
+}
