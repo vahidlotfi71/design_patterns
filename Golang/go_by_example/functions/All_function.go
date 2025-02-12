@@ -112,17 +112,76 @@ func IntSql() func() int {
 	}
 }
 
-
-func Recursive(n int )int{
+func Recursive(n int) int {
 	if n == 0 {
-		return  0 
+		return 0
 	}
 	return n + Recursive(n-1)
 }
 
-func Fibo(n int)int{
-	if n < 2{
+func Fibo(n int) int {
+	if n < 2 {
 		return n
 	}
 	return Fibo(n-1) + Fibo(n-2)
+}
+
+func Sum() {
+	slice1 := []int{1, 2, 3, 4, 5, 6, 7, 8}
+	var sum int
+
+	for _, val := range slice1 {
+		sum += val
+	}
+	fmt.Println("sum of slice: ", sum)
+}
+
+func Find_Index() {
+	slice1 := []int{11, 22, 33, 44, 55, 66, 77}
+	for index, val := range slice1 {
+		if val == 22 {
+			fmt.Println("index: ", index)
+		}
+	}
+}
+
+func Map_iter() {
+	map1 := make(map[int]string)
+	map1[1] = "vahid"
+	map1[2] = "hasan"
+	map1[3] = "mehrdad"
+	map1[4] = "asad"
+
+	for key, value := range map1 {
+		fmt.Println(key, "->", value)
+	}
+
+}
+
+func Range1() {
+	text := "vahid lotfi"
+	for index, val := range text {
+		fmt.Printf("%v -> %v\n", index, val)
+	}
+}
+
+func Pointer1(number *int) {
+	num := *number
+	fmt.Println(num)
+}
+
+func New_struct(name string, age int) {
+
+	type Person struct {
+		name1 string
+		age1  int
+	}
+
+	func() *Person {
+		person1 := &Person{}
+		person1.name1 = name
+		person1.age1 = 42
+		fmt.Println(person1)
+		return person1
+	}()
 }

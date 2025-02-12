@@ -25,5 +25,14 @@ func main() {
 
 	fibo := f.Fibo(12)
 	fmt.Println(fibo)
+	f.Sum()
+	f.Find_Index()
+	f.Map_iter()
+	f.Range1()
+	num := 12
+	f.Pointer1(&num)
+	f.New_struct("vahid",32)
+
+
 
 }
